@@ -7,6 +7,8 @@
     <title>MARKUP DEVELOPER - JIWON</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -20,20 +22,27 @@
             </nav>
         </header>
 
-        <div class="visual">
-            <div class="inner">
-                <h3>/ INTRODUCTION</h3>
-                <h2>MARKUP <br> DEVELOPER</h2>
-                <p>
-                    안녕하세요. 5년차 마크업개발자 김지원입니다.
-                    스타트업에서 첫 발걸음을 떼고 
-                    웹에이전시에서 글로벌 기업인 한국암웨이 쇼핑몰 사이트 운영 업무를 맡으며
-                    바쁘게 돌아가는 스케줄을 능숙하게 소화하고 시니어와 주니어 사이의 중간 역할을 소화해냈습니다.
-                </p>
-            </div>
-        </div>
-
         <main>
+            <section class="visual">
+                <div class="inner">
+                    <h3 data-scroll>/ INTRODUCTION</h3>
+                    <h2 data-scroll>MARKUP <br> DEVELOPER</h2>
+                    <p data-scroll>
+                        안녕하세요. 5년차 마크업개발자 김지원입니다.
+                        스타트업에서 첫 발걸음을 떼고 
+                        웹에이전시에서 글로벌 기업인 한국암웨이 쇼핑몰 사이트 운영 업무를 맡으며
+                        바쁘게 돌아가는 스케줄을 능숙하게 소화하고 시니어와 주니어 사이의 중간 역할을 소화해냈습니다.
+                    </p>
+                </div>
+            </section>
+            <section class="bnr">
+                <div class="cover">
+                    <p class="first-parallel"></p>
+                </div>
+                <div class="cover">
+                    <p class="second-parallel"></p>
+                </div>
+            </section>
             <section class="ability">
                 <div class="inner">
                     <h3>/ ABILITY</h3>
@@ -176,6 +185,62 @@
             <a href="mailto:winonv@gmail.com">CONTACT ME</a>
         </footer>
     </div>
-    <script src="js/visual_effect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        (function () {
+            var scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true
+            });
+        })();
+    </script>
+    <script>
+        const pTag1 = document.querySelector('.first-parallel')
+        const pTag2 = document.querySelector('.second-parallel')
+
+        const textArr1 = 'Thanks for visiting my Website. Thanks for visiting my Website.'.split(' ')
+        const textArr2 = 'MARKUP DEVELOPER PORTFOLIO MARKUP DEVELOPER PORTFOLIO'.split(' ')
+
+        let count1 = 0
+        let count2 = 0
+
+        initTexts(pTag1, textArr1)
+        initTexts(pTag2, textArr2)
+
+        function initTexts(element, textArray) {
+            textArray.push(...textArray)
+            for (let i = 0; i < textArray.length; i++) {
+                element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`
+            }
+        }
+
+        function marqueeText(count, element, direction) {
+            if (count > element.scrollWidth / 2) {
+                element.style.transform = `translate3d(0, 0, 0)`
+                count = 0
+            }
+            element.style.transform = `translate3d(${direction * count}px, 0, 0)`
+
+            return count
+        }
+
+        function animate() {
+            count1++
+            count2++
+
+            count1 = marqueeText(count1, pTag1, -1)
+            count2 = marqueeText(count2, pTag2, 1)
+
+            window.requestAnimationFrame(animate)
+        }
+
+        function scrollHandler() {
+            count1 += 10
+            count2 += 10
+        }
+
+        window.addEventListener('scroll', scrollHandler)
+        animate()
+    </script>
 </body>
 </html>
