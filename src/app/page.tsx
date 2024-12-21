@@ -1,7 +1,11 @@
-export default function Home() {
+import IntroSection from '@/components/sections/IntroSection';
+
+const Home = () => {
   return (
     <main>
-      <h1>환영합니다</h1>
+      <IntroSection />
     </main>
   );
-}
+};
+
+export default Home;
