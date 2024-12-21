@@ -1,6 +1,6 @@
 'use client';
 import {
-  Container,
+  IntroContainer,
   MainTitle,
   SummaryText,
   ImageLooping,
@@ -9,7 +9,7 @@ import {
 
 const IntroSection = () => {
   return (
-    <Container>
+    <IntroContainer>
       <div className='inner'>
         <SummaryText>
           감각으로 경험
@@ -21,7 +21,7 @@ const IntroSection = () => {
           추구합니다.
         </Description>
       </div>
-    </Container>
+    </IntroContainer>
   );
 };
 

@@ -21,7 +21,7 @@ const moveBackground = keyframes`
   }
 `;
 
-export const Container = styled.section`
+export const IntroContainer = styled.section`
   & .inner {
     position: sticky;
     top: 0;
