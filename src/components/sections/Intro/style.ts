@@ -1,10 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import bgExperienceImage from './images/bg-experience.jpg';
-
-const LayoutSize = {
-  inner: '90vw',
-};
+import { LayoutSize } from '@/styles/constants/layout';
 
 const moveBackground = keyframes`
   0% {

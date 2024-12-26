@@ -1,3 +1,4 @@
+import CareerSection from '@/components/sections/Career';
 import IntroSection from '@/components/sections/Intro';
 import SkillSection from '@/components/sections/Skill';
 
@@ -6,6 +7,7 @@ const Home = () => {
     <main>
       <IntroSection />
       <SkillSection />
+      <CareerSection />
     </main>
   );
 };
