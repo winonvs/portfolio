@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format": "prettier --write ."
   },
+  "homepage": "https://winonvs.github.io/portfolio/",
   "dependencies": {
     "gsap": "^3.12.5",
     "next": "15.1.2",
@@ -27,6 +28,7 @@
     "eslint-config-next": "15.1.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.4.2",
     "typescript": "^5"
   }
