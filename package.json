@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://winonvs.github.io/portfolio/",
   "dependencies": {
