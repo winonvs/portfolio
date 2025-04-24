@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://winonvs.github.io/portfolio/",
+  "homepage": "https://winonvs.github.io/portfolio",
   "dependencies": {
     "gsap": "^3.12.5",
     "next": "15.1.2",
