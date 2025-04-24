@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "homepage": "https://winonvs.github.io/portfolio/",
